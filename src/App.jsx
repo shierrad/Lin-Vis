@@ -37,9 +37,14 @@ function App() {
 
     graphics.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
   }
-
   graphics.stroke();
 
+  graphics.setStrokeStyle({width: 1, color: 0x55ffff});
+  graphics.moveTo(points[0].x, points[0].y);
+  points.forEach( (p) => {
+      graphics.lineTo(p.x, p.y);
+  });
+  graphics.stroke();
   // ---- DRAW POINTS ----
   graphics.setFillStyle({ color: 0xff0000 });
 
